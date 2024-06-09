@@ -17,6 +17,10 @@ h3 {
   font-size: 28px;
 }
 
+h4 {
+  font-size: 20px;
+}
+
 .navBig {
   margin: 11px 50px 11px 24px;
   display: flex;
@@ -181,6 +185,46 @@ main {
 }
 .eventsGrid .eventCard img {
   width: 100%;
+  height: 153px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.eventsGrid .eventCard h4 {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.eventsGrid .eventCard p {
+  color: #707070;
+  margin-bottom: 8px;
+}
+.eventsGrid .eventCard .eventDate {
+  font-size: 16px;
+}
+.eventsGrid .eventCard .eventDate::before {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 3px;
+  content: url(../assets/cards_icons/eventDateIcon.svg);
+}
+.eventsGrid .eventCard .eventAttendees {
+  font-size: 16px;
+}
+.eventsGrid .eventCard .eventAttendees::before {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 3px;
+  content: url(../assets/cards_icons/eventAttendeesIcon.svg);
+}
+.eventsGrid .eventCard .eventCost {
+  font-size: 16px;
+}
+.eventsGrid .eventCard .eventCost::before {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 3px;
+  content: url("../assets/cards_icons/eventCostIcon.svg");
 }
 
 @media screen and (max-width: 1200px) {
@@ -211,6 +255,9 @@ main {
   }
   h3 {
     font-size: 24px;
+  }
+  h4 {
+    font-size: 18px;
   }
   .navLang p {
     display: none;
@@ -246,6 +293,9 @@ main {
   }
   h3 {
     font-size: 20px;
+  }
+  h4 {
+    font-size: 16px;
   }
   #navSearchFormSmall {
     display: flex;
@@ -316,15 +366,50 @@ main {
     align-items: center;
     gap: 20px;
   }
-  .eventCard {
+  .eventsGrid .eventCard {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: flex-start;
     gap: 20px;
+    width: 100%;
   }
-  .eventCard img {
+  .eventsGrid .eventCard img {
     max-width: 40%;
+    max-height: 132px;
+  }
+  .eventsGrid .eventCard .eventCardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    height: 153px;
+  }
+  .eventsGrid .eventCard .eventDate {
+    order: 1;
+    font-size: 14px;
+  }
+  .eventsGrid .eventCard .eventDate::before {
+    display: none;
+  }
+  .eventsGrid .eventCard h4 {
+    order: 2;
+  }
+  .eventsGrid .eventCard .eventCategory {
+    order: 3;
+  }
+  .eventsGrid .eventCard .eventAttendees {
+    font-size: 14px;
+    order: 4;
+    justify-self: flex-end;
+  }
+  .eventsGrid .eventCard .eventAttendees::before {
+    display: none;
+  }
+  .eventsGrid .eventCard .eventAttendees::after {
+    content: " attendees";
+  }
+  .eventsGrid .eventCard .eventCost {
+    display: none;
   }
 }
 @media screen and (max-width: 480px) {
@@ -337,10 +422,28 @@ main {
   h2 {
     font-size: 25px;
   }
+  h4 {
+    font-size: 14px;
+  }
   .mainDescription {
     margin: 30px 10px;
   }
   .mainDescription img {
     max-width: 215px;
+  }
+  .eventsGrid .eventCard {
+    border-top: 1px solid #D9D9D9;
+    padding-top: 10px;
+  }
+  .eventsGrid .eventCard img {
+    max-width: 98px;
+    max-height: 64px;
+  }
+  .eventsGrid .eventCard .eventCardInfo {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .eventsGrid .eventCard .eventDate, .eventsGrid .eventCard .eventCategory, .eventsGrid .eventCard .eventAttendees {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=style.css.map */

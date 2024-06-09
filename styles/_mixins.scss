@@ -48,3 +48,9 @@
     border-top-right-radius: $buttons-border-radius;
     border-bottom-right-radius: $buttons-border-radius;
 }
+
+@mixin iconInlineAlign() {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 3px;
+}

@@ -14,6 +14,10 @@ h3 {
     font-size: $h3-font-size;
 }
 
+h4 {
+    font-size: $h4-font-size;
+}
+
 .navBig {
     margin: 11px 50px 11px 24px;
     @include displayFlex(row, space-between, center, 20px);
@@ -133,10 +137,48 @@ main {
     max-width: 1196px;
     .eventCard {
         img {
-            width: 100%;;
+            width: 100%;
+            height: 153px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+        h4 {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        p {
+            color: $extra-info-color;
+            margin-bottom: 8px;
+        }
+
+        .eventDate {
+            font-size: $important-p-font-size;
+            &::before {
+                @include iconInlineAlign();
+                content: url(../assets/cards_icons/eventDateIcon.svg);
+            }
+        }
+        .eventAttendees{
+            font-size: $important-p-font-size;
+            &::before {
+                @include iconInlineAlign();
+                content: url(../assets/cards_icons/eventAttendeesIcon.svg);  
+            }
+        }
+        .eventCost{
+            font-size: $important-p-font-size;
+            &::before {
+                @include iconInlineAlign();
+                content: url('../assets/cards_icons/eventCostIcon.svg');
+            }
         }
     }
 }
+
+
+
+
 
 
 @media screen and (max-width: 1200px) {
@@ -184,6 +226,10 @@ main {
         font-size: 24px;
     }
 
+    h4 {
+        font-size: 18px;
+    }
+
     .navLang {
         p {
             display: none;
@@ -229,6 +275,9 @@ main {
     }
     h3 {
         font-size: 20px;
+    }
+    h4 {
+        font-size: 16px;
     }
 
     #navSearchFormSmall {
@@ -291,15 +340,52 @@ main {
 
     .eventsGrid {
         @include displayFlex(column, center, center, 20px);
-    }
-
-    .eventCard {
-        @include displayFlex(row, center, center, 20px);
-
-        img {
-            max-width: 40%;
+        .eventCard {
+            @include displayFlex(row, start, flex-start, 20px);
+            width: 100%;
+    
+            img {
+                max-width: 40%;
+                max-height: 132px;
+            }
+    
+            .eventCardInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: baseline;
+                height: 153px;
+            }
+    
+            .eventDate {
+                order: 1;
+                font-size: $p-font-size;
+                &::before {
+                    display: none;
+                }
+            }
+            h4 {
+                order: 2;
+            }
+            .eventCategory {
+                order: 3;
+            }
+            .eventAttendees {
+                font-size: $p-font-size;
+                order: 4;
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    content: ' attendees';
+                }
+                justify-self: flex-end;
+            }
+            .eventCost {
+                display: none;
+            }
         }
     }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -313,11 +399,31 @@ main {
     h2 {
         font-size: 25px;
     }
+    h4 {
+        font-size: 14px;
+    }
     .mainDescription {
         margin: 30px 10px;
 
         img {
             max-width: 215px;
+        }
+    }
+
+    .eventsGrid {
+        .eventCard {
+            border-top: 1px solid #D9D9D9;
+            padding-top: 10px;
+            img {
+                max-width: 98px;
+                max-height: 64px;
+            }
+            .eventCardInfo {
+                height: fit-content;
+            }
+            .eventDate, .eventCategory, .eventAttendees {
+                font-size: 12px;
+            }
         }
     }
 }
