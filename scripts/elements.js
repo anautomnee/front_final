@@ -1,0 +1,1 @@
+export const navSearchLocation = document.querySelector('#navSearchLocation');

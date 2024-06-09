@@ -1,0 +1,20 @@
+@mixin displayFlex($direction, $justify, $align, $gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+};
+
+@mixin borderOutlineNone() {
+    outline: none;
+    border: none;
+}
+
+@mixin buttonStyle() {
+    background-color: $buttons-background-color;
+    color: $buttons-color;
+    padding: 8px 16px;
+    border-radius: 8px;
+    @include borderOutlineNone();
+}

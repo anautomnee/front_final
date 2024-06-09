@@ -1,1 +1,89 @@
 @import 'reset';
+@import 'mixins';
+@import 'variables';
+@import 'media';
+
+p {
+    font-size: $p-font-size;
+}
+
+nav {
+    margin: 15px 50px 0px 24px;
+    @include displayFlex(row, space-between, center, 20px);
+
+    .navLeft {
+        @include displayFlex(row, center, center, 40px);
+
+        #navSearchForm {
+            @include displayFlex(row, center, center, 0px);
+            position: relative;
+        }
+
+        #navSearchIcon {
+            position: absolute;
+            left: 10px;
+        }
+
+        input {
+            min-height: 42px;
+            border: 1px solid $input-border-color;
+        }
+
+        #navSearch {
+            padding-left: 37px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-right: 0px;
+            width: 300px;
+
+            &::placeholder {
+                font-size: 16px;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        #navSearchLocation {
+            width: 254px;
+            border-right: 0px;
+            padding-left: 17px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        #navSearchSubmit {
+            height: 42px;
+            @include borderOutlineNone();
+            background-color: $nav-search-submit-background-color;
+            padding: 11px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+    }
+
+    .navRight {
+        @include displayFlex(row, center, center, 22px);
+
+        #navSignUpBtn {
+            @include buttonStyle();
+        }
+    }
+    .navLang {
+        @include displayFlex(row, center, center, 4px);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #navSearch {
+        width: 100px;
+
+    }
+
+    #navSearchLocation {
+        width: 100px;
+    }
+}

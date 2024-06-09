@@ -2,4 +2,105 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-size: 14px;
+}
+
+nav {
+  margin: 15px 50px 0px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+nav .navLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+nav .navLeft #navSearchForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  position: relative;
+}
+nav .navLeft #navSearchIcon {
+  position: absolute;
+  left: 10px;
+}
+nav .navLeft input {
+  min-height: 42px;
+  border: 1px solid #707070;
+}
+nav .navLeft #navSearch {
+  padding-left: 37px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: 0px;
+  width: 300px;
+}
+nav .navLeft #navSearch::-moz-placeholder {
+  font-size: 16px;
+}
+nav .navLeft #navSearch::placeholder {
+  font-size: 16px;
+}
+nav .navLeft #navSearch:focus {
+  outline: none;
+}
+nav .navLeft #navSearchLocation {
+  width: 254px;
+  border-right: 0px;
+  padding-left: 17px;
+}
+nav .navLeft #navSearchLocation:focus {
+  outline: none;
+}
+nav .navLeft #navSearchSubmit {
+  height: 42px;
+  outline: none;
+  border: none;
+  background-color: #F65858;
+  padding: 11px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+nav .navRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+nav .navRight #navSignUpBtn {
+  background-color: #00798A;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+}
+nav .navLang {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+@media screen and (max-width: 1200px) {
+  #navSearch {
+    width: 100px;
+  }
+  #navSearchLocation {
+    width: 100px;
+  }
 }/*# sourceMappingURL=style.css.map */
