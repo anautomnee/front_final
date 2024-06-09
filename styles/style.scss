@@ -1,14 +1,17 @@
 @import 'reset';
 @import 'mixins';
 @import 'variables';
-@import 'media';
 
 p {
     font-size: $p-font-size;
 }
 
-nav {
-    margin: 15px 50px 0px 24px;
+h2 {
+    font-size: $h2-font-size;
+}
+
+.navBig {
+    margin: 11px 50px 11px 24px;
     @include displayFlex(row, space-between, center, 20px);
 
     .navLeft {
@@ -17,52 +20,37 @@ nav {
         #navSearchForm {
             @include displayFlex(row, center, center, 0px);
             position: relative;
-        }
 
-        #navSearchIcon {
-            position: absolute;
-            left: 10px;
-        }
-
-        input {
-            min-height: 42px;
-            border: 1px solid $input-border-color;
-        }
-
-        #navSearch {
-            padding-left: 37px;
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
-            border-right: 0px;
-            width: 300px;
-
-            &::placeholder {
-                font-size: 16px;
+            #navSearchIcon {
+                position: absolute;
+                left: 10px;
             }
-
-            &:focus {
-                outline: none;
+    
+            #navSearch, #navSearchLocation {
+                min-height: 42px;
+                border: 1px solid $input-border-color;
             }
-        }
-
-        #navSearchLocation {
-            width: 254px;
-            border-right: 0px;
-            padding-left: 17px;
-
-            &:focus {
-                outline: none;
+    
+            #navSearch {
+                @include searchParams();
+                width: 300px;
+            }
+    
+            #navSearchLocation {
+                width: 254px;
+                border-right: 0px;
+                padding-left: 17px;
+    
+                &:focus {
+                    outline: none;
+                }
+            }
+    
+            #navSearchSubmit {
+                @include searchBtn();
             }
         }
 
-        #navSearchSubmit {
-            height: 42px;
-            @include borderOutlineNone();
-            background-color: $nav-search-submit-background-color;
-            padding: 11px;
-            border-top-right-radius: 8px;
-            border-bottom-right-radius: 8px;
-        }
     }
 
     .navRight {
@@ -77,13 +65,155 @@ nav {
     }
 }
 
-@media screen and (max-width: 1200px) {
-    #navSearch {
-        width: 100px;
+#navSearchFormSmall {
+    display: none;
+}
 
+main {
+    margin: 0 158px;
+}
+
+.mainDescription {
+    @include displayFlex(row, center, center, 46px);
+    margin: 96px 0;
+
+    .mainDescriptionLeft {
+        max-width: 608px;
+
+        h2, p {
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: $important-p-font-size;
+        }
+
+        #mainDescriptionJoinBtn {
+            @include buttonStyle();
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    main {
+        margin: 0 10%;
     }
 
-    #navSearchLocation {
-        width: 100px;
+    .navBig {
+        .navLeft {
+            #navSearchForm {
+                #navSearch {
+                    width: fit-content;
+                }
+                #navSearchLocation {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+    
+
+    h2 {
+        font-size: 36px;
+    }
+    
+    .mainDescriptionLeft {
+        p {
+            font-size: $p-font-size;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    .navBig {
+        margin: 11px 20px 11px 24px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .navLang {
+        p {
+            display: none;
+        }
+    }
+
+    .mainDescription {
+
+        img {
+            max-width: 320px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    h2 {
+        font-size: 28px;
+    }
+
+    #navSearchFormSmall {
+        @include displayFlex(row, center, center, 0px);
+        gap: 0;
+        margin: 0 auto;
+        input {
+            width: 300px;
+            min-height: 42px;
+            border: 1px solid $input-border-color;
+            @include searchParams();
+        }
+        button {
+            @include searchBtn();
+            position: relative;
+        }
+        #navSearchIconSmall {
+            position: absolute;
+            left: -292px;
+            top: 8px;
+        }
+    }
+
+    .navBig {
+        .navLeft {
+            #navSearchForm {
+                display: none;
+            }
+
+        }
+    }
+
+    .navLang {
+        p {
+            display: block;
+        }
+    }
+    
+    .mainDescription {
+        margin: 30px 0;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navBig {
+        margin: 11px 7px 11px 24px;
+    }
+
+    main {
+        margin: 0 11px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    .mainDescription {
+        margin: 30px 10px;
     }
 }

@@ -18,3 +18,27 @@
     border-radius: 8px;
     @include borderOutlineNone();
 }
+
+@mixin searchParams() {
+    padding-left: 37px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: 0px;
+
+    &::placeholder {
+        font-size: $important-p-font-size;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin searchBtn() {
+    height: 42px;
+    @include borderOutlineNone();
+    background-color: $nav-search-submit-background-color;
+    padding: 11px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

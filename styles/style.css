@@ -9,22 +9,26 @@ p {
   font-size: 14px;
 }
 
-nav {
-  margin: 15px 50px 0px 24px;
+h2 {
+  font-size: 42px;
+}
+
+.navBig {
+  margin: 11px 50px 11px 24px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
-nav .navLeft {
+.navBig .navLeft {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
-nav .navLeft #navSearchForm {
+.navBig .navLeft #navSearchForm {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -32,39 +36,39 @@ nav .navLeft #navSearchForm {
   gap: 0px;
   position: relative;
 }
-nav .navLeft #navSearchIcon {
+.navBig .navLeft #navSearchForm #navSearchIcon {
   position: absolute;
   left: 10px;
 }
-nav .navLeft input {
+.navBig .navLeft #navSearchForm #navSearch, .navBig .navLeft #navSearchForm #navSearchLocation {
   min-height: 42px;
   border: 1px solid #707070;
 }
-nav .navLeft #navSearch {
+.navBig .navLeft #navSearchForm #navSearch {
   padding-left: 37px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border-right: 0px;
   width: 300px;
 }
-nav .navLeft #navSearch::-moz-placeholder {
+.navBig .navLeft #navSearchForm #navSearch::-moz-placeholder {
   font-size: 16px;
 }
-nav .navLeft #navSearch::placeholder {
+.navBig .navLeft #navSearchForm #navSearch::placeholder {
   font-size: 16px;
 }
-nav .navLeft #navSearch:focus {
+.navBig .navLeft #navSearchForm #navSearch:focus {
   outline: none;
 }
-nav .navLeft #navSearchLocation {
+.navBig .navLeft #navSearchForm #navSearchLocation {
   width: 254px;
   border-right: 0px;
   padding-left: 17px;
 }
-nav .navLeft #navSearchLocation:focus {
+.navBig .navLeft #navSearchForm #navSearchLocation:focus {
   outline: none;
 }
-nav .navLeft #navSearchSubmit {
+.navBig .navLeft #navSearchForm #navSearchSubmit {
   height: 42px;
   outline: none;
   border: none;
@@ -73,14 +77,14 @@ nav .navLeft #navSearchSubmit {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-nav .navRight {
+.navBig .navRight {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 22px;
 }
-nav .navRight #navSignUpBtn {
+.navBig .navRight #navSignUpBtn {
   background-color: #00798A;
   color: #FFFFFF;
   padding: 8px 16px;
@@ -88,7 +92,7 @@ nav .navRight #navSignUpBtn {
   outline: none;
   border: none;
 }
-nav .navLang {
+.navBig .navLang {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -96,11 +100,141 @@ nav .navLang {
   gap: 4px;
 }
 
+#navSearchFormSmall {
+  display: none;
+}
+
+main {
+  margin: 0 158px;
+}
+
+.mainDescription {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 46px;
+  margin: 96px 0;
+}
+.mainDescription .mainDescriptionLeft {
+  max-width: 608px;
+}
+.mainDescription .mainDescriptionLeft h2, .mainDescription .mainDescriptionLeft p {
+  margin-bottom: 24px;
+}
+.mainDescription .mainDescriptionLeft p {
+  font-size: 16px;
+}
+.mainDescription .mainDescriptionLeft #mainDescriptionJoinBtn {
+  background-color: #00798A;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+}
+
 @media screen and (max-width: 1200px) {
-  #navSearch {
-    width: 100px;
+  main {
+    margin: 0 10%;
   }
-  #navSearchLocation {
-    width: 100px;
+  .navBig .navLeft #navSearchForm #navSearch {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .navBig .navLeft #navSearchForm #navSearchLocation {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  .mainDescriptionLeft p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .navBig {
+    margin: 11px 20px 11px 24px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  .navLang p {
+    display: none;
+  }
+  .mainDescription img {
+    max-width: 320px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 28px;
+  }
+  #navSearchFormSmall {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    gap: 0;
+    margin: 0 auto;
+  }
+  #navSearchFormSmall input {
+    width: 300px;
+    min-height: 42px;
+    border: 1px solid #707070;
+    padding-left: 37px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: 0px;
+  }
+  #navSearchFormSmall input::-moz-placeholder {
+    font-size: 16px;
+  }
+  #navSearchFormSmall input::placeholder {
+    font-size: 16px;
+  }
+  #navSearchFormSmall input:focus {
+    outline: none;
+  }
+  #navSearchFormSmall button {
+    height: 42px;
+    outline: none;
+    border: none;
+    background-color: #F65858;
+    padding: 11px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: relative;
+  }
+  #navSearchFormSmall #navSearchIconSmall {
+    position: absolute;
+    left: -292px;
+    top: 8px;
+  }
+  .navBig .navLeft #navSearchForm {
+    display: none;
+  }
+  .navLang p {
+    display: block;
+  }
+  .mainDescription {
+    margin: 30px 0;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 480px) {
+  .navBig {
+    margin: 11px 7px 11px 24px;
+  }
+  main {
+    margin: 0 11px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  .mainDescription {
+    margin: 30px 10px;
   }
 }/*# sourceMappingURL=style.css.map */
