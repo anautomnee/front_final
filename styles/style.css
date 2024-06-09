@@ -13,6 +13,10 @@ h2 {
   font-size: 42px;
 }
 
+h3 {
+  font-size: 28px;
+}
+
 .navBig {
   margin: 11px 50px 11px 24px;
   display: flex;
@@ -134,6 +138,51 @@ main {
   border: none;
 }
 
+.eventsNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  margin-bottom: 24px;
+}
+.eventsNav .eventsNavDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.eventsNav .eventsNavDiv #eventsNavLocation {
+  background-color: #F3F9F9;
+  outline: none;
+  border: none;
+  padding: 8px 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #00798A;
+  border-radius: 8px;
+}
+.eventsNav .eventsNavDiv #eventsNavLocation svg {
+  width: 22px;
+  height: 22px;
+}
+.eventsNav p {
+  color: #00798A;
+  font-size: 16px;
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 272px));
+  gap: 36px;
+  margin: 0 auto;
+  max-width: 1196px;
+}
+.eventsGrid .eventCard img {
+  width: 100%;
+}
+
 @media screen and (max-width: 1200px) {
   main {
     margin: 0 10%;
@@ -160,16 +209,43 @@ main {
   h2 {
     font-size: 32px;
   }
+  h3 {
+    font-size: 24px;
+  }
   .navLang p {
     display: none;
   }
+  .mainDescription {
+    gap: 0;
+  }
   .mainDescription img {
     max-width: 320px;
+  }
+  .mainDescription #mainDescriptionJoinBtn {
+    display: none;
+  }
+  .eventsNav .eventsNavDiv #eventsNavLocation {
+    font-size: 16px;
+  }
+  .eventsNav .eventsNavDiv #eventsNavLocation svg {
+    width: 16px;
+    height: 16px;
+  }
+  .eventsNav p {
+    font-size: 14px;
+  }
+  .eventsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 272px));
+    gap: 36px;
   }
 }
 @media screen and (max-width: 768px) {
   h2 {
     font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
   }
   #navSearchFormSmall {
     display: flex;
@@ -223,6 +299,33 @@ main {
     margin: 30px 0;
     flex-direction: column;
   }
+  .eventsNav .eventsNavDiv #eventsNavLocation {
+    font-size: 16px;
+  }
+  .eventsNav .eventsNavDiv #eventsNavLocation svg {
+    width: 16px;
+    height: 16px;
+  }
+  .eventsNav p {
+    font-size: 14px;
+  }
+  .eventsGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .eventCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .eventCard img {
+    max-width: 40%;
+  }
 }
 @media screen and (max-width: 480px) {
   .navBig {
@@ -236,5 +339,8 @@ main {
   }
   .mainDescription {
     margin: 30px 10px;
+  }
+  .mainDescription img {
+    max-width: 215px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -6,6 +6,12 @@
     gap: $gap;
 };
 
+@mixin displayGrid($columns, $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    gap: $gap;
+};
+
 @mixin borderOutlineNone() {
     outline: none;
     border: none;
@@ -39,6 +45,6 @@
     @include borderOutlineNone();
     background-color: $nav-search-submit-background-color;
     padding: 11px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-right-radius: $buttons-border-radius;
+    border-bottom-right-radius: $buttons-border-radius;
 }

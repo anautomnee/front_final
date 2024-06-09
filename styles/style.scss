@@ -10,6 +10,10 @@ h2 {
     font-size: $h2-font-size;
 }
 
+h3 {
+    font-size: $h3-font-size;
+}
+
 .navBig {
     margin: 11px 50px 11px 24px;
     @include displayFlex(row, space-between, center, 20px);
@@ -95,7 +99,44 @@ main {
 }
 
 
+.eventsNav {
+    @include displayFlex(row, space-between, center, 0px);
+    margin-bottom: 24px;
 
+    .eventsNavDiv {
+        @include displayFlex(row, center, center, 12px);
+
+        #eventsNavLocation {
+            background-color: #F3F9F9;
+            @include borderOutlineNone();
+            padding: 8px 12px;
+            font-size: $location-font-size;
+            font-weight: $location-font-weight;
+            color: $location-color;
+            border-radius: $buttons-border-radius;
+
+            svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+    p {
+        color: $location-color;
+        font-size: $important-p-font-size;
+    }
+}
+
+.eventsGrid {
+    @include displayGrid(repeat(4, minmax(100px,272px)), 36px);
+    margin: 0 auto;
+    max-width: 1196px;
+    .eventCard {
+        img {
+            width: 100%;;
+        }
+    }
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -139,6 +180,10 @@ main {
         font-size: 32px;
     }
 
+    h3 {
+        font-size: 24px;
+    }
+
     .navLang {
         p {
             display: none;
@@ -146,10 +191,33 @@ main {
     }
 
     .mainDescription {
-
+        gap: 0;
         img {
             max-width: 320px;
         }
+        #mainDescriptionJoinBtn {
+            display: none;
+        }
+    }
+
+    .eventsNav {
+        .eventsNavDiv {
+            #eventsNavLocation {
+                font-size: $important-p-font-size;
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+
+        }
+        p {
+            font-size: $p-font-size;
+        }
+    }
+
+    .eventsGrid {
+        @include displayGrid(repeat(3, minmax(100px,272px)), 36px);
     }
 }
 
@@ -158,6 +226,9 @@ main {
 
     h2 {
         font-size: 28px;
+    }
+    h3 {
+        font-size: 20px;
     }
 
     #navSearchFormSmall {
@@ -200,6 +271,35 @@ main {
         margin: 30px 0;
         flex-direction: column;
     }
+
+
+    .eventsNav {
+        .eventsNavDiv {
+            #eventsNavLocation {
+                font-size: $important-p-font-size;
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+
+        }
+        p {
+            font-size: $p-font-size;
+        }
+    }
+
+    .eventsGrid {
+        @include displayFlex(column, center, center, 20px);
+    }
+
+    .eventCard {
+        @include displayFlex(row, center, center, 20px);
+
+        img {
+            max-width: 40%;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -215,5 +315,9 @@ main {
     }
     .mainDescription {
         margin: 30px 10px;
+
+        img {
+            max-width: 215px;
+        }
     }
 }
