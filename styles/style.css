@@ -20,6 +20,7 @@ h3 {
 
 h4 {
   font-size: 20px;
+  font-weight: 500;
 }
 
 .navBig {
@@ -113,7 +114,7 @@ h4 {
   display: none;
 }
 
-.mainTop {
+.main {
   margin: 0 158px;
 }
 
@@ -287,8 +288,73 @@ h4 {
   padding: 8px 66px;
 }
 
+#categoriesHeader {
+  margin: 24px 0;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  row-gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.categoriesContainer .categoryGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.categoriesContainer .category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 26px 28px;
+  width: 135px;
+  height: 112px;
+  background-color: #F7FBFB;
+}
+.categoriesContainer .category p {
+  font-size: 16px;
+  max-width: 84px;
+  text-align: center;
+}
+
+.citiesPartContainer p {
+  margin: 16px 0 28px 0;
+  color: #707070;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.citiesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.citiesContainer .cityGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.citiesContainer .city img {
+  margin-bottom: 24px;
+}
+
 @media screen and (max-width: 1200px) {
-  .mainTop {
+  .main {
     margin: 0 10%;
   }
   .navBig .navLeft #navSearchForm #navSearch {
@@ -354,6 +420,10 @@ h4 {
   }
   .joinMeetupContainer img {
     width: 238px;
+  }
+  .citiesContainer .city img {
+    width: 154px;
+    height: 154px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -506,12 +576,27 @@ h4 {
   .joinMeetupContainer .joinMeetupInfo p {
     font-size: 12px;
   }
+  .joinMeetupContainer .joinMeetupInfo #joinMeetupSignUpBtn {
+    margin-bottom: 16px;
+  }
+  .citiesContainer {
+    gap: 18px;
+  }
+  .citiesContainer .cityGroup {
+    gap: 18px;
+  }
+  .citiesContainer .miami {
+    display: none;
+  }
+  .citiesContainer .city img {
+    margin-bottom: 18px;
+  }
 }
 @media screen and (max-width: 480px) {
   .navBig {
     margin: 11px 7px 11px 24px;
   }
-  .mainTop {
+  .main {
     margin: 0 11px;
   }
   h2 {
@@ -542,6 +627,16 @@ h4 {
     font-size: 12px;
   }
   .joinMeetupContainer {
+    position: absolute;
+    z-index: -1;
     padding: 16px;
+  }
+  .bottom {
+    margin-top: 26.5vh;
+  }
+  .categoriesContainer {
+    row-gap: 11px;
+    -moz-column-gap: 23px;
+         column-gap: 23px;
   }
 }/*# sourceMappingURL=style.css.map */

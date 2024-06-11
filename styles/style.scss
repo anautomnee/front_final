@@ -19,6 +19,7 @@ h3 {
 
 h4 {
     font-size: $h4-font-size;
+    font-weight: 500;
 }
 
 ////////////// NAV ///////////////////// 
@@ -82,7 +83,7 @@ h4 {
     display: none;
 }
 
-.mainTop {
+.main {
     margin: 0 158px;
 }
 
@@ -242,7 +243,60 @@ h4 {
     }
 }
 
+////////////// CATEGORIES ///////////////////// 
 
+#categoriesHeader {
+    margin: 24px 0;
+}
+.categoriesContainer {
+    @include displayFlex(row, center, center, 16px);
+    row-gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+
+    .categoryGroup {
+        @include displayFlex(row, center, center, 16px);
+    }
+    .category {
+        @include displayFlex(column, center, center, 6px);
+        padding: 26px 28px;
+        width: 135px;
+        height: 112px;
+        background-color: $categories-background-color;
+
+        p {
+            font-size: $important-p-font-size;
+            max-width: 84px;
+            text-align: center;
+        }
+    }
+}
+
+////////////// CITIES ///////////////////// 
+
+.citiesPartContainer {
+    p {
+        margin: 16px 0 28px 0;
+        color: $extra-info-color;
+        font-size: $important-p-font-size;
+        line-height: 24px;
+    }
+}
+
+.citiesContainer {
+    @include displayFlex(row, center, center, 40px);
+    text-align: center;
+    flex-wrap: wrap;
+
+    .cityGroup {
+        @include displayFlex(row, center, center, 40px);
+    }
+    .city {
+        img {
+            margin-bottom: 24px;
+        }
+    }
+}
 
 
 
@@ -254,7 +308,7 @@ h4 {
 ////////////// MEDIA 1200PX ///////////////////// 
 
 @media screen and (max-width: 1200px) {
-    .mainTop {
+    .main {
         margin: 0 10%;
     }
 
@@ -347,6 +401,15 @@ h4 {
         padding: 18px 24px;
         img {
             width: 238px;
+        }
+    }
+
+    .citiesContainer {
+        .city {
+            img {
+                width: 154px;
+                height: 154px;
+            }
         }
     }
 }
@@ -489,6 +552,24 @@ h4 {
             p {
                 font-size: $small-p-font-size;
             }
+            #joinMeetupSignUpBtn {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .citiesContainer {
+        gap: 18px;
+        .cityGroup {
+            gap: 18px;
+        }
+        .miami {
+            display: none;
+        }
+        .city {
+            img {
+                margin-bottom: 18px;
+            }
         }
     }
 
@@ -501,7 +582,7 @@ h4 {
         margin: 11px 7px 11px 24px;
     }
 
-    .mainTop {
+    .main {
         margin: 0 11px;
     }
     h2 {
@@ -536,6 +617,17 @@ h4 {
     }
 
     .joinMeetupContainer {
+        position: absolute;
+        z-index: -1;
         padding: 16px;
+    }
+
+    .bottom {
+        margin-top: 26.5vh;
+    }
+
+    .categoriesContainer {
+        row-gap: 11px;
+        column-gap: 23px;
     }
 }
