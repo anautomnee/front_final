@@ -9,4 +9,9 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let event of eventsStore ) {
         utils.createEventCard(event, element.eventsGrid);
     }
+    // Prepopulate upcoming online events
+    const upcomingOnlineEvents = utils.sortOnlineEventsByTime(eventsStore);
+    for (let event of upcomingOnlineEvents ) {
+        utils.createEventCard(event, element.eventsGridUpcoming);
+    }
 })

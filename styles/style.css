@@ -176,6 +176,10 @@ main {
   font-size: 16px;
 }
 
+#eventsNavUpcoming {
+  margin-top: 40px;
+}
+
 .eventsGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(100px, 272px));
@@ -185,6 +189,7 @@ main {
 }
 .eventsGrid .eventCard {
   position: relative;
+  height: 400px;
 }
 .eventsGrid .eventCard img {
   width: 100%;
@@ -391,6 +396,8 @@ main {
     align-items: flex-start;
     gap: 20px;
     width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   .eventsGrid .eventCard img {
     max-width: 40%;
