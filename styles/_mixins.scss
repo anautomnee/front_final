@@ -54,3 +54,8 @@
     display: inline-block;
     margin-right: 5px;
 }
+
+@mixin footerHeader() {
+    color: $footer-header-color;
+    font-size: $important-p-font-size;
+}

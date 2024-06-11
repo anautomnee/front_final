@@ -22,6 +22,12 @@ h4 {
     font-weight: 500;
 }
 
+////////////// PONTER SETTINGS ///////////////////// 
+
+a:hover, button:hover {
+    cursor: pointer;
+}
+
 ////////////// NAV ///////////////////// 
 
 .navBig {
@@ -76,6 +82,9 @@ h4 {
     }
     .navLang {
         @include displayFlex(row, center, center, 4px);
+        svg:hover {
+            cursor: pointer;
+        }
     }
 }
 
@@ -151,6 +160,9 @@ h4 {
     margin: 0 auto;
     max-width: 1196px;
     .eventCard {
+        &:hover {
+            cursor: pointer;
+        }
         position: relative;
         height: 400px;
         img {
@@ -258,6 +270,9 @@ h4 {
         @include displayFlex(row, center, center, 16px);
     }
     .category {
+        &:hover {
+            cursor: pointer;
+        }
         @include displayFlex(column, center, center, 6px);
         padding: 26px 28px;
         width: 135px;
@@ -290,6 +305,9 @@ h4 {
 
     .cityGroup {
         @include displayFlex(row, center, center, 40px);
+        &:hover{
+            cursor: pointer;
+        }
     }
     .city {
         img {
@@ -297,6 +315,150 @@ h4 {
         }
     }
 }
+
+////////////// HOW TO ///////////////////// 
+
+.howContainer {
+
+    margin: 64px 0;
+    
+    h3 {
+        margin-bottom: 24px;
+    }
+
+    .howCardsContainer {
+        @include displayFlex(row, center, center, 32px);
+
+        .howCards {
+            padding: 32px 24px;
+            width: 580px;
+            @include displayFlex(row, flex-start, flex-start, 24px);
+            background-color: $categories-background-color;
+
+            h4, #howCardsDiscoverInfoP, #howCardsStartInfoP {
+                margin-bottom: 16px;
+            }
+
+            img {
+                width: 41px;
+                height: 41px;
+            }
+
+            #searchEvents, #startGroup {
+                color: $location-color;
+                font-weight: 500;
+            }
+            
+        }
+    }
+}
+
+////////////// FRIENDSHIPS ///////////////////// 
+
+.friendshipsContainer {
+    margin-bottom: 38px;
+}
+
+#friendshipsDescription {
+    margin: 16px 0 28px 0;
+    color: $extra-info-color;
+    font-size: $important-p-font-size;
+}
+
+.friendshipsCardsContainer {
+    @include displayFlex(row, center, flex-start, 32px);
+
+    .friendshipsCard {
+
+        img {
+            width: 24.8vw;
+        }
+
+        h4 {
+            max-width: 320px;
+            line-height: 28px;
+            margin: 24px 0 12px 0;
+        }
+
+        .friendshipsCardInfo {
+            color: $extra-info-color;
+            font-size: $important-p-font-size;
+            margin-bottom: 16px;
+            max-width: 376px;
+        }
+
+        .friendshipsReadMore {
+            color: $location-color;
+            margin-bottom: 54px;
+        }
+    }
+}
+
+////////////// FOOTER ///////////////////// 
+
+footer {
+    background-color: $footer-background-color;
+    padding: 34px 196px 40px 196px;
+}
+
+.footerTop {
+    @include displayFlex(row, flex-start, flex-start, 36px);
+    border-bottom: 1px solid $input-border-color;
+
+    a {
+        @include footerHeader();
+        font-weight: 500;
+    }
+
+    button {
+        background-color: $footer-background-color;
+        color: $buttons-color;
+        border: 1px solid $buttons-color;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin-bottom: 25px;
+    }
+}
+
+.footerContainer {
+    @include displayFlex(row, flex-start, flex-start, 240px);
+    margin: 24px 0 36px 0;
+    color: $footer-color;
+    .footerLinks {
+        @include displayFlex(column, flex-start, flex-start, 7px);
+        min-width: 130px;
+
+        .yourAccountHeader {
+            @include footerHeader();
+        }
+    }
+}
+
+#followHeader {
+    @include footerHeader();
+    margin-bottom: 12px;
+}
+
+.followContainer {
+    margin-bottom: 48px;
+    @include displayFlex(row, space-between, flex-start, 0);
+    #socialMedia, #appStores {
+        @include displayFlex(row, flex-start, flex-start, 32px);
+    }
+}
+
+.footerBottom {
+    @include displayFlex(row, flex-start, flex-start, 24px);
+    text-wrap: nowrap;
+    #footerYear {
+        color: $footer-header-color;
+    }
+    a {
+        color: $footer-color;
+    }
+}
+
+
 
 
 
@@ -338,6 +500,10 @@ h4 {
 
     .joinMeetupContainer {
         margin: 40px 10%;
+    }
+
+    footer {
+        padding: 34px 64px 40px 64px;
     }
 }
 
@@ -410,6 +576,32 @@ h4 {
                 width: 154px;
                 height: 154px;
             }
+        }
+    }
+
+    .howContainer {
+        .howCardsContainer {
+            flex-direction: column;
+            .howCards {
+                width: 100%;
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+
+    .friendshipsCardsContainer {
+        gap: 18px;
+    }
+
+    .footerContainer {
+        gap: 20%;
+    }
+    .footerBottom {
+        a {
+            display: none;
         }
     }
 }
@@ -573,6 +765,39 @@ h4 {
         }
     }
 
+    .howContainer {
+        margin: 24px 0;
+        .howCardsContainer {
+            gap: 12px;
+            .howCards {
+                padding: 20px 15px;
+            }
+        }
+    }
+
+    .friendshipsCardsContainer {
+        flex-direction: column;
+        align-items: center;
+        .friendshipsCard {
+
+            img {
+                width: 360px;
+            }
+            .friendshipsReadMore {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .footerContainer {
+        gap: 4%;
+    }
+    .followContainer {
+        #appStores {
+            display: none;
+        }
+    }
+
 }
 
 ////////////// MEDIA 480PX ///////////////////// 
@@ -629,5 +854,33 @@ h4 {
     .categoriesContainer {
         row-gap: 11px;
         column-gap: 23px;
+    }
+
+    .friendshipsContainer {
+        margin-bottom: 108px;
+        h3 {
+            margin-bottom: 27px;
+        }
+    }
+    #friendshipsDescription {
+        display: none;
+    }
+
+    footer {
+        padding: 20px 7px 36px 18px;
+    }
+    .footerTop {
+        border-bottom: none;
+        a {
+            padding-bottom: 36px;
+            border-bottom: 1px solid $input-border-color;
+        }
+    }
+    .footerContainer {
+        gap: 24px;
+        .footerLinks {
+            min-width: 40px;
+            max-width: 98px;
+        }
     }
 }
