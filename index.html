@@ -45,29 +45,40 @@
     
 
     <main>
-        <div class="mainDescription">
-            <div class="mainDescriptionLeft">
-                <h2>The people platform — Where interests become friendships</h2>
-                <p>Whatever your interest, from hiking and reading to networking and skill sharing,there are thousands of people who share it on Meetup. Events are happening every day—sign up to join the fun.</p>
-                <button id="mainDescriptionJoinBtn">Join Meetup</button>
+        <div class="mainTop">
+            <div class="mainDescription">
+                <div class="mainDescriptionLeft">
+                    <h2>The people platform — Where interests become friendships</h2>
+                    <p>Whatever your interest, from hiking and reading to networking and skill sharing,there are thousands of people who share it on Meetup. Events are happening every day—sign up to join the fun.</p>
+                    <button id="mainDescriptionJoinBtn">Join Meetup</button>
+                </div>
+                <img src="assets/mainDescription_picture.svg" alt="mainDescription_picture">
             </div>
-            <img src="assets/mainDescription_picture.svg" alt="mainDescription_picture">
+    
+            <div class="eventsContainer">
+                <div class="eventsNav">
+                    <div class="eventsNavDiv">
+                        <h3>Events near</h3>
+                        <button id="eventsNavLocation">Mountain View, CA <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00798A"><path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"/></svg></button>
+                    </div>
+                    <p>See all events</p>
+                </div>
+                <div class="eventsGrid" id="eventsGridNear"></div>
+                <div class="eventsNav" id="eventsNavUpcoming">
+                    <h3>Upcoming online events</h3>
+                    <p>See all events</p>
+                </div>
+                <div class="eventsGrid" id="eventsGridUpcoming"></div>
+            </div>
         </div>
 
-        <div class="eventsContainer">
-            <div class="eventsNav">
-                <div class="eventsNavDiv">
-                    <h3>Events near</h3>
-                    <button id="eventsNavLocation">Mountain View, CA <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00798A"><path d="M80 0v-160h800V0H80Zm160-320h56l312-311-29-29-28-28-311 312v56Zm-80 80v-170l448-447q11-11 25.5-17t30.5-6q16 0 31 6t27 18l55 56q12 11 17.5 26t5.5 31q0 15-5.5 29.5T777-687L330-240H160Zm560-504-56-56 56 56ZM608-631l-29-29-28-28 57 57Z"/></svg></button>
-                </div>
-                <p>See all events</p>
+        <div class="joinMeetupContainer">
+            <h3>Join Meetup</h3>
+            <img src="./assets/joinMeetup.svg" alt="joinMeetup">
+            <div class="joinMeetupInfo">
+                <p>People use Meetup to meet new people, learn new things, find support, get out of their comfort zones, and pursue their passions, together. Membership is free.</p>
+                <button id="joinMeetupSignUpBtn">Sign up</button>
             </div>
-            <div class="eventsGrid" id="eventsGridNear"></div>
-            <div class="eventsNav" id="eventsNavUpcoming">
-                <h3>Upcoming online events</h3>
-                <p>See all events</p>
-            </div>
-            <div class="eventsGrid" id="eventsGridUpcoming"></div>
         </div>
     </main>
     

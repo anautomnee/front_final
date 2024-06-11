@@ -2,6 +2,8 @@
 @import 'mixins';
 @import 'variables';
 
+////////////// FONTS ///////////////////// 
+
 p {
     font-size: $p-font-size;
 }
@@ -12,11 +14,14 @@ h2 {
 
 h3 {
     font-size: $h3-font-size;
+    font-weight: 500;
 }
 
 h4 {
     font-size: $h4-font-size;
 }
+
+////////////// NAV ///////////////////// 
 
 .navBig {
     margin: 11px 50px 11px 24px;
@@ -77,9 +82,11 @@ h4 {
     display: none;
 }
 
-main {
+.mainTop {
     margin: 0 158px;
 }
+
+////////////// MAIN DESCRIPTION ///////////////////// 
 
 .mainDescription {
     @include displayFlex(row, center, center, 46px);
@@ -102,6 +109,7 @@ main {
     }
 }
 
+////////////// EVENTS NAV ///////////////////// 
 
 .eventsNav {
     @include displayFlex(row, space-between, center, 0px);
@@ -134,6 +142,8 @@ main {
 #eventsNavUpcoming {
     margin-top: 40px;
 }
+
+////////////// EVENTS GRID ///////////////////// 
 
 .eventsGrid {
     @include displayGrid(repeat(4, minmax(100px,272px)), 36px);
@@ -195,13 +205,56 @@ main {
     }
 }
 
+////////////// JOIN MEETUP ///////////////////// 
+.joinMeetupContainer {
+    margin: 0 158px;
+    @include displayGrid(3fr 1fr, 10px);
+
+    img {
+        grid-row-start: span 2;
+
+    }
+
+    h3 {
+        align-self: center;
+    }
+
+    margin-top: 40px;
+    padding: 20px 56px;
+    background-color: $categories-background-color;
+
+    .joinMeetupInfo {
+        @include displayFlex(column, flex-start, flex-start, 16px);
+
+        p {
+            font-size: $important-p-font-size;
+            margin-right: 10%;
+            line-height: 24px;
+        }
+
+        #joinMeetupSignUpBtn {
+            background-color: $join-meetup-btn-background-color;
+            color: $buttons-color;
+            @include borderOutlineNone();
+            border-radius: 8px;
+            padding: 8px 66px;
+        }
+    }
+}
 
 
 
 
+
+
+
+
+////////////// MEDIA QUERIES ///////////////////// 
+
+////////////// MEDIA 1200PX ///////////////////// 
 
 @media screen and (max-width: 1200px) {
-    main {
+    .mainTop {
         margin: 0 10%;
     }
 
@@ -228,8 +281,13 @@ main {
             font-size: $p-font-size;
         }
     }
+
+    .joinMeetupContainer {
+        margin: 40px 10%;
+    }
 }
 
+////////////// MEDIA 1024PX ///////////////////// 
 
 @media screen and (max-width: 1024px) {
 
@@ -284,8 +342,16 @@ main {
     .eventsGrid {
         @include displayGrid(repeat(3, minmax(100px,272px)), 36px);
     }
+
+    .joinMeetupContainer {
+        padding: 18px 24px;
+        img {
+            width: 238px;
+        }
+    }
 }
 
+////////////// MEDIA 768PX ///////////////////// 
 
 @media screen and (max-width: 768px) {
 
@@ -411,14 +477,31 @@ main {
         }
     }
 
+    .joinMeetupContainer {
+        margin: 40px 0;
+        padding: 20px 56px;
+        @include displayFlex(column, center, center, 16px);
+        h3 {
+            align-self: flex-start;
+        }
+        .joinMeetupInfo {
+            align-items: center;
+            p {
+                font-size: $small-p-font-size;
+            }
+        }
+    }
+
 }
+
+////////////// MEDIA 480PX ///////////////////// 
 
 @media screen and (max-width: 480px) {
     .navBig {
         margin: 11px 7px 11px 24px;
     }
 
-    main {
+    .mainTop {
         margin: 0 11px;
     }
     h2 {
@@ -447,8 +530,12 @@ main {
                 height: fit-content;
             }
             .eventDate, .eventCategory, .eventAttendees, .eventOnlinePlaque {
-                font-size: 12px;
+                font-size: $small-p-font-size;
             }
         }
+    }
+
+    .joinMeetupContainer {
+        padding: 16px;
     }
 }

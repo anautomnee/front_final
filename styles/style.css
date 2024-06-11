@@ -15,6 +15,7 @@ h2 {
 
 h3 {
   font-size: 28px;
+  font-weight: 500;
 }
 
 h4 {
@@ -112,7 +113,7 @@ h4 {
   display: none;
 }
 
-main {
+.mainTop {
   margin: 0 158px;
 }
 
@@ -250,8 +251,44 @@ main {
   content: url(../assets/cards_icons/eventOnlinePlaque.svg);
 }
 
+.joinMeetupContainer {
+  margin: 0 158px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+  margin-top: 40px;
+  padding: 20px 56px;
+  background-color: #F7FBFB;
+}
+.joinMeetupContainer img {
+  grid-row-start: span 2;
+}
+.joinMeetupContainer h3 {
+  align-self: center;
+}
+.joinMeetupContainer .joinMeetupInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+}
+.joinMeetupContainer .joinMeetupInfo p {
+  font-size: 16px;
+  margin-right: 10%;
+  line-height: 24px;
+}
+.joinMeetupContainer .joinMeetupInfo #joinMeetupSignUpBtn {
+  background-color: #E32359;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 66px;
+}
+
 @media screen and (max-width: 1200px) {
-  main {
+  .mainTop {
     margin: 0 10%;
   }
   .navBig .navLeft #navSearchForm #navSearch {
@@ -267,6 +304,9 @@ main {
   }
   .mainDescriptionLeft p {
     font-size: 14px;
+  }
+  .joinMeetupContainer {
+    margin: 40px 10%;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -308,6 +348,12 @@ main {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 272px));
     gap: 36px;
+  }
+  .joinMeetupContainer {
+    padding: 18px 24px;
+  }
+  .joinMeetupContainer img {
+    width: 238px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -442,12 +488,30 @@ main {
     order: 5;
     padding: 0;
   }
+  .joinMeetupContainer {
+    margin: 40px 0;
+    padding: 20px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .joinMeetupContainer h3 {
+    align-self: flex-start;
+  }
+  .joinMeetupContainer .joinMeetupInfo {
+    align-items: center;
+  }
+  .joinMeetupContainer .joinMeetupInfo p {
+    font-size: 12px;
+  }
 }
 @media screen and (max-width: 480px) {
   .navBig {
     margin: 11px 7px 11px 24px;
   }
-  main {
+  .mainTop {
     margin: 0 11px;
   }
   h2 {
@@ -476,5 +540,8 @@ main {
   }
   .eventsGrid .eventCard .eventDate, .eventsGrid .eventCard .eventCategory, .eventsGrid .eventCard .eventAttendees, .eventsGrid .eventCard .eventOnlinePlaque {
     font-size: 12px;
+  }
+  .joinMeetupContainer {
+    padding: 16px;
   }
 }/*# sourceMappingURL=style.css.map */
