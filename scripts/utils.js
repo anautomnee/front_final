@@ -20,16 +20,24 @@ export function createEventCard(eventObj, container) {
     eventCategory.setAttribute('class', 'eventCategory')
     eventDate.innerText = rewriteDate(eventObj.date);
     eventDate.setAttribute('class', 'eventDate');
+    // Check if events has attendees
     if (eventObj.attendees) {
         eventAttendees.innerText = eventObj.attendees;
         eventAttendees.setAttribute('class', 'eventAttendees');
     } else {
         eventAttendees.hidden = true;
-    }
+    };
     
-    eventAttendees.setAttribute('class', 'eventAttendees');
     eventCost.innerText = "Free";
     eventCost.setAttribute('class', 'eventCost');
+
+    // Check if online => add a plaque
+    if (eventObj.type === "online") {
+        const eventOnlinePlaque = document.createElement('div');
+        eventInfo.append(eventOnlinePlaque);
+        eventOnlinePlaque.setAttribute('class', 'eventOnlinePlaque');
+        eventOnlinePlaque.innerText = 'Online Event';
+    };
 };
 
 

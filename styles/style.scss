@@ -136,6 +136,7 @@ main {
     margin: 0 auto;
     max-width: 1196px;
     .eventCard {
+        position: relative;
         img {
             width: 100%;
             height: 153px;
@@ -171,6 +172,19 @@ main {
             &::before {
                 @include iconInlineAlign();
                 content: url('../assets/cards_icons/eventCostIcon.svg');
+            }
+        }
+        .eventOnlinePlaque {
+            position: absolute;
+            padding: 5px;
+            border-radius: 4px;
+            top: 5px;
+            left: 10px;
+            background-color: $buttons-color;
+            color: $extra-info-color;
+            &::before {
+                @include iconInlineAlign();
+                content: url(../assets/cards_icons/eventOnlinePlaque.svg);
             }
         }
     }
@@ -331,7 +345,6 @@ main {
                     height: 16px;
                 }
             }
-
         }
         p {
             font-size: $p-font-size;
@@ -383,6 +396,12 @@ main {
             .eventCost {
                 display: none;
             }
+            .eventOnlinePlaque {
+                font-size: $p-font-size;
+                position:static;
+                order: 5;
+                padding: 0;
+            }
         }
     }
 
@@ -421,7 +440,7 @@ main {
             .eventCardInfo {
                 height: fit-content;
             }
-            .eventDate, .eventCategory, .eventAttendees {
+            .eventDate, .eventCategory, .eventAttendees, .eventOnlinePlaque {
                 font-size: 12px;
             }
         }
