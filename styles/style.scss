@@ -458,8 +458,76 @@ footer {
     }
 }
 
+////////////// EVENTS PAGE ///////////////////// 
 
+.eventsMain {
+    margin: 77px 158px;
+}
+.eventsMainTopContainer {
+    @include displayFlex(row, space-between, flex-start, 0);
+    #eventsPageEventsHeader {
+        color: $buttons-background-color;
+        margin: 16px 0 12px 0;
+        text-decoration: underline;
+    }
+    .eventsFilterButtonsContainer {
+        @include displayFlex(row, flex-start, flex-start, 18px);
+    }
+    
+    .eventsFilterBtn {
+        position: relative;
+        background-color: $footer-header-color;
+        border-radius: 40px;
+        padding: 16px;
+        width: fit-content;
+        text-wrap: nowrap;
+        @include borderOutlineNone();
+        span {
+            font-size: $p-font-size;
+            font-weight: 500;
+            &::after {
+                content: url(../assets/drop.svg);
+                vertical-align: middle;
+                margin-left: 13px;
+            }
+        }
 
+        &:hover {
+            width: 170px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            .dropcontent {
+                display: block;
+                border-bottom-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+            }
+        }
+    }
+    .dropcontent {
+        @include displayFlex(column, flex-start, flex-start, 0);
+        display: none;
+        width: 170px;
+        position: absolute;
+        left: 0;
+        background-color: #f9f9f9;
+        padding: 16px;
+        z-index: 1;
+
+        p {
+            font-size: $p-font-size;
+            margin-bottom: $p-font-size;
+
+            &:hover {
+                color: $buttons-background-color;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .eventsFilterContainer {
+        margin: 56px 0;
+    }
+}
 
 
 
@@ -680,19 +748,17 @@ footer {
     .eventsGrid {
         @include displayFlex(column, center, center, 20px);
         .eventCard {
-            @include displayFlex(row, start, flex-start, 20px);
+            @include displayFlex(row, flex-start, flex-start, 20px);
             width: 100%;
-            height: fit-content;
+            height: 153px;
     
             img {
-                max-width: 40%;
-                max-height: 132px;
+                max-width: 140px;
+                max-height: 80px;
             }
     
             .eventCardInfo {
-                display: flex;
-                flex-direction: column;
-                justify-content: baseline;
+                @include displayFlex(column, start, start, 0);
                 height: 153px;
             }
     
@@ -709,25 +775,24 @@ footer {
             .eventCategory {
                 order: 3;
             }
+            .eventOnlinePlaque {
+                font-size: $p-font-size;
+                position:static;
+                order: 4;
+                padding: 0;
+            }
             .eventAttendees {
                 font-size: $p-font-size;
-                order: 4;
+                order: 5;
                 &::before {
                     display: none;
                 }
                 &::after {
                     content: ' attendees';
                 }
-                justify-self: flex-end;
             }
             .eventCost {
                 display: none;
-            }
-            .eventOnlinePlaque {
-                font-size: $p-font-size;
-                position:static;
-                order: 5;
-                padding: 0;
             }
         }
     }
@@ -824,20 +889,32 @@ footer {
         }
     }
 
+    .seeAllEvents {
+        display: none;
+    }
+
     .eventsGrid {
         .eventCard {
             border-top: 1px solid #D9D9D9;
             padding-top: 10px;
+            height: 96px;
             img {
                 max-width: 98px;
                 max-height: 64px;
             }
             .eventCardInfo {
-                height: fit-content;
+                height: 96px;
+                position: relative;
+                    .eventAttendees {
+                        position: absolute;
+                        bottom: 0px;
+                    }
             }
-            .eventDate, .eventCategory, .eventAttendees, .eventOnlinePlaque {
-                font-size: $small-p-font-size;
+            .eventDate, .eventCategory, .eventAttendees, .eventOnlinePlaque, h4 {
+                font-size: 10px;
+                margin-bottom: 3px;
             }
+            
         }
     }
 
@@ -848,7 +925,7 @@ footer {
     }
 
     .bottom {
-        margin-top: 26.5vh;
+        margin-top: 40vh;
     }
 
     .categoriesContainer {

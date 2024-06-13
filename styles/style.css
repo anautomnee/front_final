@@ -526,6 +526,85 @@ footer {
   color: #C5C4C4;
 }
 
+.eventsMain {
+  margin: 77px 158px;
+}
+
+.eventsMainTopContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0;
+}
+.eventsMainTopContainer #eventsPageEventsHeader {
+  color: #00798A;
+  margin: 16px 0 12px 0;
+  text-decoration: underline;
+}
+.eventsMainTopContainer .eventsFilterButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 18px;
+}
+.eventsMainTopContainer .eventsFilterBtn {
+  position: relative;
+  background-color: #F6F7F8;
+  border-radius: 40px;
+  padding: 16px;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-wrap: nowrap;
+  outline: none;
+  border: none;
+}
+.eventsMainTopContainer .eventsFilterBtn span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.eventsMainTopContainer .eventsFilterBtn span::after {
+  content: url(../assets/drop.svg);
+  vertical-align: middle;
+  margin-left: 13px;
+}
+.eventsMainTopContainer .eventsFilterBtn:hover {
+  width: 170px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.eventsMainTopContainer .eventsFilterBtn:hover .dropcontent {
+  display: block;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.eventsMainTopContainer .dropcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+  display: none;
+  width: 170px;
+  position: absolute;
+  left: 0;
+  background-color: #f9f9f9;
+  padding: 16px;
+  z-index: 1;
+}
+.eventsMainTopContainer .dropcontent p {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.eventsMainTopContainer .dropcontent p:hover {
+  color: #00798A;
+  cursor: pointer;
+}
+.eventsMainTopContainer .eventsFilterContainer {
+  margin: 56px 0;
+}
+
 @media screen and (max-width: 1200px) {
   .main {
     margin: 0 10%;
@@ -703,21 +782,22 @@ footer {
   .eventsGrid .eventCard {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
     width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 153px;
   }
   .eventsGrid .eventCard img {
-    max-width: 40%;
-    max-height: 132px;
+    max-width: 140px;
+    max-height: 80px;
   }
   .eventsGrid .eventCard .eventCardInfo {
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
+    justify-content: start;
+    align-items: start;
+    gap: 0;
     height: 153px;
   }
   .eventsGrid .eventCard .eventDate {
@@ -733,10 +813,15 @@ footer {
   .eventsGrid .eventCard .eventCategory {
     order: 3;
   }
+  .eventsGrid .eventCard .eventOnlinePlaque {
+    font-size: 14px;
+    position: static;
+    order: 4;
+    padding: 0;
+  }
   .eventsGrid .eventCard .eventAttendees {
     font-size: 14px;
-    order: 4;
-    justify-self: flex-end;
+    order: 5;
   }
   .eventsGrid .eventCard .eventAttendees::before {
     display: none;
@@ -746,12 +831,6 @@ footer {
   }
   .eventsGrid .eventCard .eventCost {
     display: none;
-  }
-  .eventsGrid .eventCard .eventOnlinePlaque {
-    font-size: 14px;
-    position: static;
-    order: 5;
-    padding: 0;
   }
   .joinMeetupContainer {
     margin: 40px 0;
@@ -831,20 +910,29 @@ footer {
   .mainDescription img {
     max-width: 215px;
   }
+  .seeAllEvents {
+    display: none;
+  }
   .eventsGrid .eventCard {
     border-top: 1px solid #D9D9D9;
     padding-top: 10px;
+    height: 96px;
   }
   .eventsGrid .eventCard img {
     max-width: 98px;
     max-height: 64px;
   }
   .eventsGrid .eventCard .eventCardInfo {
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 96px;
+    position: relative;
   }
-  .eventsGrid .eventCard .eventDate, .eventsGrid .eventCard .eventCategory, .eventsGrid .eventCard .eventAttendees, .eventsGrid .eventCard .eventOnlinePlaque {
-    font-size: 12px;
+  .eventsGrid .eventCard .eventCardInfo .eventAttendees {
+    position: absolute;
+    bottom: 0px;
+  }
+  .eventsGrid .eventCard .eventDate, .eventsGrid .eventCard .eventCategory, .eventsGrid .eventCard .eventAttendees, .eventsGrid .eventCard .eventOnlinePlaque, .eventsGrid .eventCard h4 {
+    font-size: 10px;
+    margin-bottom: 3px;
   }
   .joinMeetupContainer {
     position: absolute;
@@ -852,7 +940,7 @@ footer {
     padding: 16px;
   }
   .bottom {
-    margin-top: 26.5vh;
+    margin-top: 40vh;
   }
   .categoriesContainer {
     row-gap: 11px;
