@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meetup events</title>
     <script type="module" src="scripts/events.js"></script>
-    <script type="module"  src="scripts/script.js"></script>
+    <script type="module"  src="scripts/filter.js"></script>
     <script type="module"  src="scripts/elements.js"></script>
     <script type="module"  src="scripts/utils.js"></script>
     <link rel="stylesheet" href="styles/style.css">
@@ -46,48 +46,112 @@
         <div class="eventsMain">
             <div class="eventsMainTopContainer">
                 <div class="eventsMainTopLeft">
-                    <h3>Events near New York, NY</h3>
-                    <h4 id="eventsPageEventsHeader">Events</h4>
-                    <div class="eventsFilterButtonsContainer">
-                        <div class="eventsFilterBtn">
-                            <span>Any type</span>
-                            <div class="typeDropdown dropcontent">
-                               <p>Online</p>
-                               <p>Offline</p>
+                    <div class="top">
+                        <h3>Events near New York, NY</h3>
+                        <h4 id="eventsPageEventsHeader">Events</h4>
+                        <div class="eventsFilterButtonsContainer">
+                            <div class="eventsFilterBtn">
+                                <span>Any type</span>
+                                <div class="typeDropdown dropcontent">
+                                   <p class="filterType">Any type</p>
+                                   <p class="filterType">Online</p>
+                                   <p class="filterType">Offline</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="eventsFilterBtn">
-                            <span>Any distance</span>
-                            <div class="distanceDropdown dropcontent">
-                                <p>5km</p>
-                                <p>10km</p>
-                                <p>15km</p>
-                                <p>20km</p>
-                                <p>25km</p>
-                                <p>50km</p>
-                                <p>75km</p>
-                                <p>100km</p>
+                            <div class="eventsFilterBtn">
+                                <span>Any distance</span>
+                                <div class="distanceDropdown dropcontent">
+                                    <p class="filterDistance">Any distance</p>
+                                    <p class="filterDistance">5 km</p>
+                                    <p class="filterDistance">10 km</p>
+                                    <p class="filterDistance">15 km</p>
+                                    <p class="filterDistance">20 km</p>
+                                    <p class="filterDistance">25 km</p>
+                                    <p class="filterDistance">50 km</p>
+                                    <p class="filterDistance">75 km</p>
+                                    <p class="filterDistance">100 km</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="eventsFilterBtn">
-                            <span>Any category</span>
-                            <div class="categoryDropdown dropcontent">
-                                <p>Social Activities</p>
-                                <p>Hobbies and Passions</p>
-                                <p>Health and Wellbeing</p>
-                                <p>Business</p>
-                                <p>Technology</p>
+                            <div class="eventsFilterBtn">
+                                <span>Any category</span>
+                                <div class="categoryDropdown dropcontent">
+                                    <p class="filterCategory">Any category</p>
+                                    <p class="filterCategory">Social Activities</p>
+                                    <p class="filterCategory">Hobbies and Passions</p>
+                                    <p class="filterCategory">Health and Wellbeing</p>
+                                    <p class="filterCategory">Business</p>
+                                    <p class="filterCategory">Technology</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="eventsFilterContainer"></div>
                 </div>
                 <div class="eventsMainTopRight">
                     <p>Find events near</p>
                     <h4>New York, NY</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d181346.89257609643!2d-74.13556746171338!3d40.69947723323629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sde!4v1718307067883!5m2!1sen!2sde" width="350" height="285" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-            <div class="eventsFilterContainer"></div>
         </div>
     </main>
+
+    <footer>
+        <div class="footerTop">
+            <a>Create your own Meetup group.</a>
+            <button>Get Started</button>
+        </div>
+        <div class="footerContainer">
+            <div class="yourAccount footerLinks">
+                <a class="yourAccountHeader">Your account</a>
+                <a>Sign up</a>
+                <a>Log in</a>
+                <a>Help</a>
+                <a>Become an Affiliate</a>
+            </div>
+            <div class="discover footerLinks">
+                <a class="yourAccountHeader">Discover</a>
+                <a>Groups</a>
+                <a>Calendar</a>
+                <a>Topics</a>
+                <a>Cities</a>
+                <a>Online Events</a>
+                <a>Local Guides</a>
+                <a>Make Friends</a>
+            </div>
+            <div class="footerMeetup footerLinks">
+                <a class="yourAccountHeader">Meetup</a>
+                <a>About</a>
+                <a>Blog</a>
+                <a>Meetup Pro</a>
+                <a>Careers</a>
+                <a>Apps</a>
+                <a>Podcast</a>
+            </div>
+        </div>
+        <p id="followHeader">Follow us</p>
+        <div class="followContainer">
+            <div id="socialMedia">
+                <a><img src="./assets/socialMedia_icons/facebook.svg" alt="facebook"></a>
+                <a><img src="./assets/socialMedia_icons/twitter.svg" alt="twitter"></a>
+                <a><img src="./assets/socialMedia_icons/youtube.svg" alt="youtube"></a>
+                <a><img src="./assets/socialMedia_icons/insta.svg" alt="insta"></a>
+                <a><img src="./assets/socialMedia_icons/tiktok.svg" alt="tiktok"></a>
+            </div>
+            <div id="appStores">
+                <a><img src="./assets/socialMedia_icons/googleplay.svg" alt="googleplay"></a>
+                <a><img src="./assets/socialMedia_icons/appstore.svg" alt="appstore"></a>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p id="footerYear">© 2024 Meetup</p>
+            <a>Terms of Service</a>
+            <a>Privacy Policy</a>
+            <a>Do Not Sell or Share My Personal Data</a>
+            <a>Cookie Policy</a>
+            <a>Help</a>
+        </div>
+
+    </footer>
 </body>
 </html>

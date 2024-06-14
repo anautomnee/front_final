@@ -530,12 +530,16 @@ footer {
   margin: 77px 158px;
 }
 
+.eventsMainTopRight h4 {
+  margin-bottom: 14px;
+}
+
 .eventsMainTopContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 0;
+  gap: 18px;
 }
 .eventsMainTopContainer #eventsPageEventsHeader {
   color: #00798A;
@@ -554,8 +558,6 @@ footer {
   background-color: #F6F7F8;
   border-radius: 40px;
   padding: 16px;
-  width: -moz-fit-content;
-  width: fit-content;
   text-wrap: nowrap;
   outline: none;
   border: none;
@@ -603,6 +605,80 @@ footer {
 }
 .eventsMainTopContainer .eventsFilterContainer {
   margin: 56px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+.eventsMainTopContainer .map {
+  width: 350px;
+  height: 285px;
+}
+
+.eventFilterCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  height: 144px;
+  width: 604px;
+  max-width: 604px;
+  padding-top: 16px;
+  border-top: 1px solid #D9D9D9;
+  position: relative;
+}
+.eventFilterCard img {
+  min-width: 160px;
+  height: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+.eventFilterCard .eventFilterCardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+}
+.eventFilterCard .eventFilterCardInfo .eventFilterDate {
+  color: #7C6F50;
+  order: 1;
+}
+.eventFilterCard .eventFilterCardInfo h4 {
+  font-size: 16px;
+  order: 2;
+}
+.eventFilterCard .eventFilterCardInfo .eventFilterCategory {
+  order: 3;
+  color: #707070;
+}
+.eventFilterCard .eventFilterCardInfo .eventFilterAttendees {
+  order: 4;
+  color: #707070;
+  position: absolute;
+  bottom: 0;
+}
+.eventFilterCard .eventFilterCardInfo .eventFilterAttendees::after {
+  content: " attendees";
+}
+.eventFilterCard .eventFilterCardInfo .eventOnlinePlaque {
+  position: absolute;
+  padding: 5px;
+  border-radius: 4px;
+  top: 24px;
+  left: 8px;
+  background-color: #FFFFFF;
+  color: #707070;
+  font-size: 12px;
+}
+.eventFilterCard .eventFilterCardInfo .eventOnlinePlaque::before {
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 5px;
+  content: url(../assets/cards_icons/eventOnlinePlaque.svg);
 }
 
 @media screen and (max-width: 1200px) {
@@ -628,6 +704,9 @@ footer {
   }
   footer {
     padding: 34px 64px 40px 64px;
+  }
+  .eventsMainTopRight {
+    display: none;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -698,6 +777,9 @@ footer {
   }
   .footerBottom a {
     display: none;
+  }
+  .eventsMain {
+    margin: 44px 68px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -890,6 +972,36 @@ footer {
   .followContainer #appStores {
     display: none;
   }
+  .eventsMain {
+    margin: 24px;
+  }
+  .eventsMainTopContainer .eventsFilterContainer {
+    width: 370px;
+    margin: 18px 0;
+  }
+  .eventFilterCard {
+    height: 104px;
+    width: 360px;
+  }
+  .eventFilterCard img {
+    min-width: 98px;
+    height: 55px;
+  }
+  .eventFilterCard .eventFilterCardInfo p, .eventFilterCard .eventFilterCardInfo h4 {
+    font-size: 10px;
+  }
+  .eventFilterCard .eventFilterCardInfo .eventOnlinePlaque {
+    font-size: 8px;
+    position: static;
+    order: 5;
+    padding: 0;
+  }
+  .top {
+    max-width: 470px;
+    padding-bottom: 10px;
+    overflow-y: visible;
+    overflow-x: scroll;
+  }
 }
 @media screen and (max-width: 480px) {
   .navBig {
@@ -972,5 +1084,14 @@ footer {
   .footerContainer .footerLinks {
     min-width: 40px;
     max-width: 98px;
+  }
+  .eventsMain {
+    margin: 18px 12px 18px 10px;
+  }
+  .top {
+    max-width: 390px;
+    padding-bottom: 10px;
+    overflow-y: visible;
+    overflow-x: scroll;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,9 @@
-export function createEventCard(eventObj, container) {
+import * as element from "./elements.js";
+import { filterArray } from "./filter.js";
+import { eventsStore } from "./events.js";
+
+
+export function createEventCard(eventObj, container, page = 'index') {
 
     const eventCard = document.createElement('div');
     const eventImage = document.createElement('img');
@@ -11,26 +16,40 @@ export function createEventCard(eventObj, container) {
 
     container.append(eventCard);
     eventCard.append(eventImage, eventInfo)
-    eventInfo.append(eventTitle, eventCategory, eventDate, eventAttendees, eventCost);
+    eventInfo.append(eventTitle, eventCategory, eventDate, eventAttendees);
+    
 
-    eventInfo.setAttribute('class', 'eventCardInfo')
-    eventCard.setAttribute('class', 'eventCard');
+    if (page === 'filter') {
+        eventCard.setAttribute('class', 'eventFilterCard');
+        eventInfo.setAttribute('class', 'eventFilterCardInfo');
+        eventCategory.setAttribute('class', 'eventFilterCategory');
+        eventDate.setAttribute('class', 'eventFilterDate');
+        eventCost.setAttribute('class', 'eventFilterCost');
+    } else {
+        eventCard.setAttribute('class', 'eventCard');
+        eventInfo.setAttribute('class', 'eventCardInfo');
+        eventCategory.setAttribute('class', 'eventCategory');
+        eventDate.setAttribute('class', 'eventDate');
+        eventCost.setAttribute('class', 'eventCost');
+        eventInfo.append(eventCost);
+    }
     eventImage.setAttribute('src', eventObj.image);
     eventTitle.innerText = eventObj.title;
     eventCategory.innerText = eventObj.category;
-    eventCategory.setAttribute('class', 'eventCategory')
     eventDate.innerText = rewriteDate(eventObj.date);
-    eventDate.setAttribute('class', 'eventDate');
     // Check if events has attendees
     if (eventObj.attendees) {
         eventAttendees.innerText = eventObj.attendees;
-        eventAttendees.setAttribute('class', 'eventAttendees');
+        if (page === 'filter') {
+            eventAttendees.setAttribute('class', 'eventFilterAttendees');
+        } else {
+            eventAttendees.setAttribute('class', 'eventAttendees');
+        }
     } else {
         eventAttendees.hidden = true;
     };
     
     eventCost.innerText = "Free";
-    eventCost.setAttribute('class', 'eventCost');
 
     // Check if online => add a plaque
     if (eventObj.type === "online") {
@@ -82,3 +101,34 @@ export function sortOnlineEventsByTime(events) {
     }
     return upcomingOnlineEventsArr;
 };
+
+
+export function changeFilter(arr) {
+
+    let filteredEvents = eventsStore;
+    arr.forEach(filter => {
+        if (!filter.name.toString().includes('Any')) {
+            filteredEvents = filteredEvents.filter(event => {
+                return event[filter.type] === filter.name;
+            });
+        };
+    })
+
+    element.eventsFilterContainer.innerHTML = '';
+    filteredEvents.forEach(event => createEventCard(event, element.eventsFilterContainer, 'filter'));
+
+};
+
+export function changeFilterWord(event, i) {
+    const eventsFilterBtn = event.target.parentNode.previousElementSibling;
+    let filterWord = event.target.textContent;
+    eventsFilterBtn.textContent = filterWord;
+
+    if (filterWord.includes('km')) {
+        filterWord = Number(filterWord.split(' km')[0]);
+    } else if (event.target.textContent.includes('line')) {
+        filterWord = filterWord.toLowerCase();
+    }
+
+    filterArray[i].name = filterWord;
+}

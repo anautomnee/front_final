@@ -463,8 +463,14 @@ footer {
 .eventsMain {
     margin: 77px 158px;
 }
+
+.eventsMainTopRight {
+    h4 {
+        margin-bottom: 14px;
+    }
+}
 .eventsMainTopContainer {
-    @include displayFlex(row, space-between, flex-start, 0);
+    @include displayFlex(row, space-between, flex-start, 18px);
     #eventsPageEventsHeader {
         color: $buttons-background-color;
         margin: 16px 0 12px 0;
@@ -479,7 +485,6 @@ footer {
         background-color: $footer-header-color;
         border-radius: 40px;
         padding: 16px;
-        width: fit-content;
         text-wrap: nowrap;
         @include borderOutlineNone();
         span {
@@ -526,8 +531,70 @@ footer {
 
     .eventsFilterContainer {
         margin: 56px 0;
+        @include displayFlex(column, flex-start, flex-start, 20px);
+    }
+    .map {
+        width: 350px;
+        height: 285px;
+    }
+
+    }
+.eventFilterCard {
+    @include displayFlex(row, flex-start, flex-start, 12px);
+    height: 144px;
+    width: 604px;
+    max-width: 604px;
+    padding-top: 16px;
+    border-top: 1px solid #D9D9D9;
+    position: relative;
+    img {
+        min-width: 160px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .eventFilterCardInfo {
+        @include displayFlex(column, flex-start, flex-start, 4px);
+        .eventFilterDate {
+            color: $filter-event-date-color;
+            order: 1;
+        }
+        h4 {
+            font-size: $important-p-font-size;
+            order: 2;
+        }
+        .eventFilterCategory {
+            order: 3;
+            color: $extra-info-color;
+        }
+        .eventFilterAttendees {
+            order: 4;
+            color: $extra-info-color;
+            position: absolute;
+            bottom: 0;
+            &::after {
+                content: ' attendees';
+            }
+        }
+        .eventOnlinePlaque {
+            position: absolute;
+            padding: 5px;
+            border-radius: 4px;
+            top: 24px;
+            left: 8px;
+            background-color: $buttons-color;
+            color: $extra-info-color;
+            font-size: $small-p-font-size;
+            &::before {
+                @include iconInlineAlign();
+                content: url(../assets/cards_icons/eventOnlinePlaque.svg);
+            }
+        }
     }
 }
+
+
+
 
 
 
@@ -572,6 +639,10 @@ footer {
 
     footer {
         padding: 34px 64px 40px 64px;
+    }
+
+    .eventsMainTopRight {
+        display: none;
     }
 }
 
@@ -671,6 +742,10 @@ footer {
         a {
             display: none;
         }
+    }
+
+    .eventsMain {
+        margin: 44px 68px;
     }
 }
 
@@ -863,6 +938,41 @@ footer {
         }
     }
 
+    .eventsMain {
+        margin: 24px;
+    }
+    
+    .eventsMainTopContainer {
+        .eventsFilterContainer {
+            width: 370px;
+            margin: 18px 0;
+        }
+    }
+    .eventFilterCard {
+        height: 104px;
+        width: 360px;
+        img {
+            min-width: 98px;
+            height: 55px;
+        }
+        .eventFilterCardInfo {
+            p, h4 {
+                font-size: 10px;
+            }
+            .eventOnlinePlaque {
+                font-size: 8px;
+                position:static;
+                order: 5;
+                padding: 0;
+            }
+        }
+    }
+    .top {
+        max-width: 470px;
+        padding-bottom: 10px;
+        overflow-y: visible;
+        overflow-x: scroll;
+    }
 }
 
 ////////////// MEDIA 480PX ///////////////////// 
@@ -959,5 +1069,15 @@ footer {
             min-width: 40px;
             max-width: 98px;
         }
+    }
+
+    .eventsMain {
+        margin: 18px 12px 18px 10px;
+    }
+    .top {
+        max-width: 390px;
+        padding-bottom: 10px;
+        overflow-y: visible;
+        overflow-x: scroll;
     }
 }
