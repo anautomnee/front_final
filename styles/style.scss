@@ -967,12 +967,6 @@ footer {
             }
         }
     }
-    .top {
-        max-width: 470px;
-        padding-bottom: 10px;
-        overflow-y: visible;
-        overflow-x: scroll;
-    }
 }
 
 ////////////// MEDIA 480PX ///////////////////// 
@@ -1074,8 +1068,11 @@ footer {
     .eventsMain {
         margin: 18px 12px 18px 10px;
     }
+    .eventsFilterButtonsContainer {
+        min-width: 520px;
+    }
     .top {
-        max-width: 390px;
+        width: 390px;
         padding-bottom: 10px;
         overflow-y: visible;
         overflow-x: scroll;

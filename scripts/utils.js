@@ -132,3 +132,7 @@ export function changeFilterWord(event, i) {
 
     filterArray[i].name = filterWord;
 }
+
+export function hideFilterOptions(filterBtn) {
+    console.log(filterBtn);
+}

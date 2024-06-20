@@ -10,7 +10,7 @@ export const filterArray = [{
     type: 'distance'}, {
     name: 'Any category',
     type: 'category'
-    }];
+}];
 
 window.addEventListener('DOMContentLoaded', () => {
     // Prepopulate nav location
@@ -42,5 +42,4 @@ window.addEventListener('DOMContentLoaded', () => {
             utils.changeFilter(filterArray, 'category');
         });
     });
-
-})
+});
