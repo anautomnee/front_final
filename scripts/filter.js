@@ -21,6 +21,21 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // Filter
+
+    // Dropdown scroll 
+
+    element.filterBtns.forEach(btn => {btn.addEventListener('click', event => utils.openDropdown(event))});
+    element.filterBtnsScrollContainer.addEventListener('scroll', event => utils.scrollDropdown(event));
+    window.addEventListener('click', (event) => {
+        const currentDropdown = document.querySelector('.dropOpen');
+        if (currentDropdown) {
+            if(event.target.tagName !== 'SPAN') {
+                currentDropdown.style.display = 'none';
+                currentDropdown.parentElement.classList.remove('btnDropOpen');
+                currentDropdown.classList.remove('dropOpen');
+            }
+        }
+    })
     
     // Listen for changing filters
     element.filterTypes.forEach(dropdownList => {

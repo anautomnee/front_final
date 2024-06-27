@@ -133,6 +133,40 @@ export function changeFilterWord(event, i) {
     filterArray[i].name = filterWord;
 }
 
-export function hideFilterOptions(filterBtn) {
-    console.log(filterBtn);
+export function openDropdown(event) {
+    const currentDropdown = event.currentTarget.lastElementChild;
+    const position = event.currentTarget.offsetLeft - element.filterBtnsScrollContainer.scrollLeft;
+    if (currentDropdown.classList.contains('dropOpen')) {
+        currentDropdown.style.display = 'none';
+        event.currentTarget.classList.remove('btnDropOpen');
+        currentDropdown.classList.remove('dropOpen');
+    } else {
+        // Close previous filters
+        element.filterBtns.forEach(btn => {
+            btn.classList.remove('btnDropOpen');
+            btn.lastElementChild.classList.remove('dropOpen');
+        });
+        if (position < 234 ) {
+            event.currentTarget.classList.add('btnDropOpen');
+            currentDropdown.classList.add('dropOpen');
+            currentDropdown.setAttribute('leftPos', event.currentTarget.offsetLeft);
+        }
+    }
+
+    // Get offset position of selected button and subtract top container scroll position
+    currentDropdown.style.left = `${event.currentTarget.offsetLeft - element.filterBtnsScrollContainer.scrollLeft}px`;
+}
+
+export function scrollDropdown(event) {
+    const currentDropdown = document.querySelector('.dropOpen');
+        if (currentDropdown) {
+            const previousOffset = currentDropdown.getAttribute('leftPos');
+            const position = previousOffset - event.currentTarget.scrollLeft;
+            currentDropdown.style.left = `${position}px`;
+            if (position > 234 ) {
+                currentDropdown.style.display = 'none';
+                currentDropdown.parentElement.classList.remove('btnDropOpen');
+                currentDropdown.classList.remove('dropOpen');
+            }
+        };
 }

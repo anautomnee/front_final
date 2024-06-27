@@ -5,3 +5,5 @@ export const eventsFilterContainer = document.querySelector('.eventsFilterContai
 export const filterTypes = document.querySelectorAll('.filterType');
 export const filterDistances = document.querySelectorAll('.filterDistance');
 export const filterCategories = document.querySelectorAll('.filterCategory');
+export const filterBtns = document.querySelectorAll('.eventsFilterBtn');
+export const filterBtnsScrollContainer = document.querySelector('.eventsTop');
