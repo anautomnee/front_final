@@ -146,7 +146,8 @@ export function openDropdown(event) {
             btn.classList.remove('btnDropOpen');
             btn.lastElementChild.classList.remove('dropOpen');
         });
-        if (position < 234 ) {
+        // Prevent overflow with last button dropdown
+        if (position < 234 || window.innerWidth > 480) {
             event.currentTarget.classList.add('btnDropOpen');
             currentDropdown.classList.add('dropOpen');
             currentDropdown.setAttribute('leftPos', event.currentTarget.offsetLeft);
@@ -163,7 +164,8 @@ export function scrollDropdown(event) {
             const previousOffset = currentDropdown.getAttribute('leftPos');
             const position = previousOffset - event.currentTarget.scrollLeft;
             currentDropdown.style.left = `${position}px`;
-            if (position > 234 ) {
+            // Prevent overflow with last button dropdown
+            if (position > 234) {
                 currentDropdown.style.display = 'none';
                 currentDropdown.parentElement.classList.remove('btnDropOpen');
                 currentDropdown.classList.remove('dropOpen');

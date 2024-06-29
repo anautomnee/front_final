@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'mixins';
 @import 'variables';
+@import 'events';
 
 ////////////// FONTS ///////////////////// 
 
@@ -24,7 +25,7 @@ h4 {
 
 ////////////// PONTER SETTINGS ///////////////////// 
 
-a:hover, button:hover {
+a:hover, button:hover, .eventsFilterBtn span:hover {
     cursor: pointer;
 }
 
@@ -455,140 +456,6 @@ footer {
     }
     a {
         color: $footer-color;
-    }
-}
-
-////////////// EVENTS PAGE ///////////////////// 
-
-.eventsMain {
-    margin: 77px 158px;
-}
-
-.eventsMainTopRight {
-    h4 {
-        margin-bottom: 14px;
-    }
-}
-.eventsMainTopContainer {
-    @include displayFlex(row, space-between, flex-start, 18px);
-    #eventsPageEventsHeader {
-        color: $buttons-background-color;
-        margin: 16px 0 12px 0;
-        text-decoration: underline;
-    }
-    .eventsFilterButtonsContainer {
-        @include displayFlex(row, flex-start, flex-start, 18px);
-    }
-    
-    .eventsFilterBtn {
-        // position: relative;
-        background-color: $footer-header-color;
-        border-radius: 40px;
-        padding: 16px;
-        text-wrap: nowrap;
-        @include borderOutlineNone();
-        span {
-            font-size: $p-font-size;
-            font-weight: 500;
-            &::after {
-                content: url(../assets/drop.svg);
-                vertical-align: middle;
-                margin-left: 13px;
-            }
-        }
-    }
-    .btnDropOpen {
-        width: 170px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        .dropOpen {
-            display: block !important;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-        }
-    }
-    .dropcontent {
-        @include displayFlex(column, flex-start, flex-start, 0);
-        display: none;
-        width: 170px;
-        position: absolute;
-        left: 0;
-        background-color: #f9f9f9;
-        padding: 16px;
-        z-index: 1;
-
-        p {
-            font-size: $p-font-size;
-            margin-bottom: $p-font-size;
-
-            &:hover {
-                color: $buttons-background-color;
-                cursor: pointer;
-            }
-        }
-    }
-
-    .eventsFilterContainer {
-        margin: 56px 0;
-        @include displayFlex(column, flex-start, flex-start, 20px);
-    }
-    .map {
-        width: 350px;
-        height: 285px;
-    }
-
-    }
-.eventFilterCard {
-    @include displayFlex(row, flex-start, flex-start, 12px);
-    height: 144px;
-    width: 604px;
-    max-width: 604px;
-    padding-top: 16px;
-    border-top: 1px solid #D9D9D9;
-    position: relative;
-    img {
-        min-width: 160px;
-        height: 90px;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-    .eventFilterCardInfo {
-        @include displayFlex(column, flex-start, flex-start, 4px);
-        .eventFilterDate {
-            color: $filter-event-date-color;
-            order: 1;
-        }
-        h4 {
-            font-size: $important-p-font-size;
-            order: 2;
-        }
-        .eventFilterCategory {
-            order: 3;
-            color: $extra-info-color;
-        }
-        .eventFilterAttendees {
-            order: 4;
-            color: $extra-info-color;
-            position: absolute;
-            bottom: 0;
-            &::after {
-                content: ' attendees';
-            }
-        }
-        .eventOnlinePlaque {
-            position: absolute;
-            padding: 5px;
-            border-radius: 4px;
-            top: 24px;
-            left: 8px;
-            background-color: $buttons-color;
-            color: $extra-info-color;
-            font-size: $small-p-font-size;
-            &::before {
-                @include iconInlineAlign();
-                content: url(../assets/cards_icons/eventOnlinePlaque.svg);
-            }
-        }
     }
 }
 
